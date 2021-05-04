@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URS-0U-JbG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Wz2-2O-civ">
+            <objects>
+                <navigationController id="URS-0U-JbG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rhi-BI-Bzo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4bN-FB-SbQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tvi-JN-Avd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-993" y="-292"/>
+        </scene>
+        <!--User Current Location-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7t-hp-tX3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="o7t-hp-tX3" secondAttribute="bottom" id="7l9-g5-AVZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o7t-hp-tX3" secondAttribute="trailing" id="92y-6M-EC0"/>
+                            <constraint firstItem="o7t-hp-tX3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I9P-CV-nvf"/>
+                            <constraint firstItem="o7t-hp-tX3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="agN-Yx-nqR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Current Location" id="isc-EE-VQD">
+                        <barButtonItem key="backBarButtonItem" title=" " id="evi-Va-TYD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Track" id="xeM-FI-rwM">
+                            <connections>
+                                <segue destination="3bd-7b-hhw" kind="show" id="t5j-c8-Qcr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="o7t-hp-tX3" id="QZM-Zl-hcc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199" y="-293"/>
+        </scene>
+        <!--User Travelled Locations-->
+        <scene sceneID="1rD-Sw-dvT">
+            <objects>
+                <viewController id="3bd-7b-hhw" customClass="UserLocationViewController" customModule="LocationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yxz-8O-Ebr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rbQ-rk-sJ6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cfs-iI-KlA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rbQ-rk-sJ6" firstAttribute="leading" secondItem="yxz-8O-Ebr" secondAttribute="leading" id="1ap-uN-FKe"/>
+                            <constraint firstAttribute="bottom" secondItem="rbQ-rk-sJ6" secondAttribute="bottom" id="85t-ar-YDt"/>
+                            <constraint firstItem="rbQ-rk-sJ6" firstAttribute="top" secondItem="yxz-8O-Ebr" secondAttribute="top" id="H9b-wk-hpT"/>
+                            <constraint firstItem="Cfs-iI-KlA" firstAttribute="trailing" secondItem="rbQ-rk-sJ6" secondAttribute="trailing" id="UkV-Qu-GeV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Travelled Locations" id="U6a-eJ-2bU">
+                        <barButtonItem key="backBarButtonItem" title=" " id="VbJ-6C-nCC"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="rbQ-rk-sJ6" id="UIu-ya-V4z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGQ-3V-auO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529" y="-293"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
